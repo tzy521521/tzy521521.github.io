@@ -259,7 +259,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/09/02/DaoVoice/" class="post-title-link" itemprop="url">Hexo博客添加在线联系功能</a>
+                <a href="/2019/09/02/DaoVoice/" class="post-title-link" itemprop="url">DaoVoice-Hexo博客添加在线联系功能</a>
               
             
           </h1>
@@ -278,7 +278,7 @@
                 
               
 
-              <time title="创建时间：2019-09-02 13:59:00 / 修改时间：14:53:23" itemprop="dateCreated datePublished" datetime="2019-09-02T13:59:00+08:00">2019-09-02</time>
+              <time title="创建时间：2019-09-02 15:00:59 / 修改时间：19:33:27" itemprop="dateCreated datePublished" datetime="2019-09-02T15:00:59+08:00">2019-09-02</time>
             </span>
           
             
@@ -335,21 +335,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
+          <p>Hexo博客如何添加在线联系功能呢,发现了一个不错的网站可以提供在线联系的服务，当有用户在网页上给你留言后会通过邮件或者微信通知你，可以及时的解答用户的疑问。</p>
+<p>最终的效果可以参考我博客的右下角,有个聊天的按钮,效果如下所示:</p>
+<img src="/2019/09/02/DaoVoice/chat-style.jpeg" title="如何获取app_id">
+          <!--noindex-->
           
-            <p>Hexo博客如何添加在线联系功能呢,发现了一个不错的网站可以提供在线联系的服务，当有用户在网页上给你留言后会通过邮件或者微信通知你，可以及时的解答用户的疑问。</p>
-<h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h1><p>首先到<a href="http://www.daovoice.io/" target="_blank" rel="noopener">DaoVoice官网</a>上注册一个账号,注册完成后会得到一个app_id，获取appid的步骤如下图所示:<br><img src="DaoVoice/daovoice.png" alt></p>
-<h1 id="更改配置文件"><a href="#更改配置文件" class="headerlink" title="更改配置文件"></a>更改配置文件</h1><p>以next主题为例,在/themes/next/layout/_third-party/chat下添加daovoice.swig文件，代码如下：</p>
-<figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="keyword">if</span></span> theme.daovoice.enable %&#125;</span></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    (function(i,s,o,g,r,a,m)&#123;i["DaoVoiceObject"]=r;i[r]=i[r]||function()&#123;(i[r].q=i[r].q||[]).push(arguments)&#125;,i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)&#125;)(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")</span><br><span class="line">    daovoice('init', &#123;</span><br><span class="line">      app_id: "<span class="template-variable">&#123;&#123;theme.daovoice.app_id&#125;&#125;</span>"</span><br><span class="line">    &#125;);</span><br><span class="line">    daovoice('update');</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="keyword">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>更改/themes/next/layout/_third-party/chat/index.swig中的代码：</p>
-<figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="keyword">include</span></span> 'chatra.swig' %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="keyword">include</span></span> 'tidio.swig' %&#125;</span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="keyword">include</span></span> 'daovoice.swig' %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>接着打开主题配置文件_config.yml，添加如下代码：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DaoVoice</span></span><br><span class="line"><span class="attr">daovoice:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  app_id:</span> <span class="comment">#这里输入前面获取的app_id</span></span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是,next主题下聊天的按钮会和其他按钮重叠到一起，可以到聊天设置，修改下按钮的位置:</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/02/DaoVoice/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -1800,9 +1797,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
