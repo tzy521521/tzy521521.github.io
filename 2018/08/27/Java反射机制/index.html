@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="tzy&#39;s Blog">
 <meta property="og:description" content="反射机制反射　　当程序无法获知对象类型时，在运行期间动态获取类的所有属性和方法，这种动态获取类信息和动态调用对象方法的功能称为反射机制。 反射机制的实现　　Class类与java.lang.reflect类库一起实现反射机制，java.lang.reflect类库包含Field/Method/Constructors类。这些类型的对象由JVM在运行时出创建，分别用于获取未知类的域/方法/构造器：通">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T02:33:29.701Z">
+<meta property="og:updated_time" content="2019-09-02T12:45:11.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java反射机制">
 <meta name="twitter:description" content="反射机制反射　　当程序无法获知对象类型时，在运行期间动态获取类的所有属性和方法，这种动态获取类信息和动态调用对象方法的功能称为反射机制。 反射机制的实现　　Class类与java.lang.reflect类库一起实现反射机制，java.lang.reflect类库包含Field/Method/Constructors类。这些类型的对象由JVM在运行时出创建，分别用于获取未知类的域/方法/构造器：通">
@@ -291,7 +291,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-29 10:33:29" itemprop="dateModified" datetime="2019-08-29T10:33:29+08:00">2019-08-29</time>
+                <time title="修改时间：2019-09-02 20:45:11" itemprop="dateModified" datetime="2019-09-02T20:45:11+08:00">2019-09-02</time>
               </span>
             
           
@@ -371,10 +371,10 @@
       
         <h1 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h1><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>　　当程序无法获知对象类型时，在运行期间动态获取类的所有属性和方法，这种动态获取类信息和动态调用对象方法的功能称为反射机制。</p>
 <h2 id="反射机制的实现"><a href="#反射机制的实现" class="headerlink" title="反射机制的实现"></a>反射机制的实现</h2><p>　　Class类与java.lang.reflect类库一起实现反射机制，java.lang.reflect类库包含Field/Method/Constructors类。这些类型的对象由JVM在运行时出创建，分别用于获取未知类的域/方法/构造器：通过Class类和java.lang.reflect类包，未知对象的类信息在运行时被确定，并且在编译时无需获取。</p>
+<a id="more"></a>
 <h2 id="RTTI与java-lang-Class类"><a href="#RTTI与java-lang-Class类" class="headerlink" title="RTTI与java.lang.Class类"></a>RTTI与java.lang.Class类</h2><p>　　RTTI，runtime type information/运行时类型信息，JVM运行时负责记录一个对象的属性。<br>　　运行期间，Java通过Class对象记录每个对象的RTTI；每当编写并且编译一个新类时，就会产生一个对应的Class对象（和新类保存在一个同名的.class文件中）</p>
 <h2 id="JVM通过类加载器创建类的对象实例"><a href="#JVM通过类加载器创建类的对象实例" class="headerlink" title="JVM通过类加载器创建类的对象实例"></a>JVM通过类加载器创建类的对象实例</h2><p>　　类加载器首先检查类的Class对象是否加载，未加载的话从类的.class文件中加载；<br>　　一旦类的Class对象被载入内存，它就被用来创建类的所有对象。</p>
 <h2 id="java-lang-reflect类"><a href="#java-lang-reflect类" class="headerlink" title="java.lang.reflect类"></a>java.lang.reflect类</h2><p>　　reflect包提供以下类供反射使用，解析目标类。<br>　　Class类：代表一个目标类；Field类：代表目标类的成员变量；Method类：代表目标类的方法。Constructor类：代表目标类的构造方法。Array类：提供了动态创建数组，以及访问数组的元素的静态方法；</p>
-<a id="more"></a>
 <h1 id="反射步骤"><a href="#反射步骤" class="headerlink" title="反射步骤"></a>反射步骤</h1><h2 id="获得目标类的java-lang-Class对象。"><a href="#获得目标类的java-lang-Class对象。" class="headerlink" title="获得目标类的java.lang.Class对象。"></a>获得目标类的java.lang.Class对象。</h2><p>　　1.已获得目标类对象实例，通过目标类对象实例.getClass()返回该类Class对象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Object类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> Class&lt;?&gt; getClass();</span><br></pre></td></tr></table></figure>
 
