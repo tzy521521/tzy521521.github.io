@@ -1450,7 +1450,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-02 20:46:48" itemprop="dateModified" datetime="2019-09-02T20:46:48+08:00">2019-09-02</time>
+                <time title="修改时间：2019-09-02 20:49:35" itemprop="dateModified" datetime="2019-09-02T20:49:35+08:00">2019-09-02</time>
               </span>
             
           
@@ -1524,16 +1524,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee emp1 = <span class="keyword">new</span> Employee();</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NEW org/programming/mitra/exercises/Employee</span><br><span class="line">DUP</span><br><span class="line">INVOKESPECIAL org/programming/mitra/exercises/Employee.&lt;init&gt; ()V</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-使用class类的newInstance方法"><a href="#2-使用class类的newInstance方法" class="headerlink" title="(2)使用class类的newInstance方法"></a>(2)使用class类的newInstance方法</h2><p>　　我们也可以使用class类的newInstance()方法来创建对象。此newInstance()方法调用无参构造函数以创建对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee emp2 = (Employee) Class.forName(<span class="string">"org.programming.mitra.exercises.Employee"</span>).newInstance();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LDC <span class="string">"org.programming.mitra.exercises.Employee"</span></span><br><span class="line">INVOKESTATIC java/lang/Class.forName (Ljava/lang/String;)Ljava/lang/Class;</span><br><span class="line">INVOKEVIRTUAL java/lang/Class.newInstance ()Ljava/lang/Object;</span><br><span class="line">CHECKCAST org/programming/mitra/exercises/Employee</span><br></pre></td></tr></table></figure>
-
-<p>　　或者</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee emp2 = Employee.class.newInstance();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LDC Lorg/programming/mitra/exercises/Employee;.class</span><br><span class="line">INVOKEVIRTUAL java/lang/Class.newInstance ()Ljava/lang/Object;</span><br><span class="line">CHECKCAST org/programming/mitra/exercises/Employee</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
